@@ -1,7 +1,7 @@
 JsontableBundle
 ===============
 
-Form type for display of array type data in the form of a table.
+Symfony2 bundle. Type "jsontable" for symfony-form for display of array type data like table.
 
 Installation
 ------------
