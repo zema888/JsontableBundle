@@ -40,7 +40,7 @@ class JsontableExtension extends Extension
             $container->setParameter(
                 'twig.form.resources',
                 array_merge(
-                    array('ApplicationSonataJsontableBundle:Form:jsontable_widget.html.twig'),
+                    array('JsontableBundle:Form:jsontable_widget.html.twig'),
                     $container->getParameter('twig.form.resources')
                 )
             );

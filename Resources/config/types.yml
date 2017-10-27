@@ -2,7 +2,7 @@ parameters:
     jsontable.type.class: Zema888\JsontableBundle\Form\Type\JsontableType
 
 services:
-    application_sonata.type.jsontable:
+    zema888.type.jsontable:
         class: %jsontable.type.class%
         tags:
             - {name: form.type, alias: jsontable }
