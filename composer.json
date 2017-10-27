@@ -1,0 +1,38 @@
+{
+    "name": "zema888/jsontable-bundle",
+    "type": "symfony-bundle",
+    "description": "A bundle providing form type for edit array for symfony2",
+    "keywords": ["Form Type", "array", "json"],
+    "homepage": "https://github.com/zema888/JsontableBundle.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitaly Zemtsov",
+            "email": "zevi888@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-gd": "*",
+        "symfony/http-foundation": "~2.2",
+        "symfony/form": "~2.2",
+        "symfony/validator": "~2.2",
+        "symfony/routing": "~2.2",
+        "symfony/config": "~2.2",
+        "symfony/twig-bridge": "~2.2",
+        "symfony/class-loader":"~2.2",
+        "twig/twig": "~1.12",
+        "twig/extensions": "~1.0",
+        "friendsofsymfony/jsrouting-bundle": "@stable",
+        "jms/translation-bundle": "@stable"
+    },
+    "target-dir": "Zema888/JsontableBundle",
+    "autoload": {
+        "psr-0": { "Zema888\\JsontableBundle": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
