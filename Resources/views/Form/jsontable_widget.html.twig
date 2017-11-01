@@ -12,22 +12,26 @@
         <tbody>
         {% for key_row, row in value %}
             <tr>
-            {% for field in keys %}
-                <td><input name="{{ form_name }}[{{ field_name }}][{{ key_row }}][{{ field }}]"
-                           class="form-control"
-                           value="{% if row[field] is defined %}{{ row[field] }}{% endif %}"/></td>
-            {% endfor %}
+                {% for field in keys %}
+                    <td><input name="{{ form_name }}[{{ field_name }}][{{ key_row }}][{{ field }}]"
+                               class="form-control"
+                               value="{% if row[field] is defined %}{{ row[field] }}{% endif %}"/></td>
+                {% endfor %}
                 <td style="text-align: center;padding-top: 15px;">
-                    <a href="javascript:void(0);" class="js_minus_{{ field_name }}">
-                        <i class="fa fa-minus-circle"></i>
-                    </a>
+                    {% if fixed_row == false %}
+                        <a href="javascript:void(0);" class="js_minus_{{ field_name }}">
+                            <i class="fa fa-minus-circle"></i>
+                        </a>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <div>
-        <a href="javascript:void(0);" class="js_add_{{ field_name }}"><i class="fa fa-plus-circle"></i> {{ 'link_action_create'|trans({}, 'SonataAdminBundle') }}</a>
+        {% if fixed_row == false %}
+            <a href="javascript:void(0);" class="js_add_{{ field_name }}"><i class="fa fa-plus-circle"></i> {{ 'link_action_create'|trans({}, 'SonataAdminBundle') }}</a>
+        {% endif %}
     </div>
     <script>
         $(function () {

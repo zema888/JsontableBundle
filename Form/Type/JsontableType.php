@@ -10,7 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
- * Виджет "Список чекбоксов"
+ * Виджет "Массив в виде таблицы"
  *
  * Class JsontableType
  */
@@ -36,13 +36,15 @@ class JsontableType extends AbstractType
     {
         $resolver->setOptional(array(
             'keys',
-            'labeles'
+            'labeles',
+            'fixed_row'
         ));
 
         $resolver->setDefaults(array(
             'required'  => false,
             'multiple'  => true,
             'expanded'  => true,
+            'fixed_row' => false
         ));
     }
 
@@ -59,6 +61,7 @@ class JsontableType extends AbstractType
         $view->vars['form_name'] = $form->getParent()->getName();
         $view->vars['keys'] = $options['keys'];
         $view->vars['labeles'] = $options['labeles'];
+        $view->vars['fixed_row'] = $options['fixed_row'];
     }
 
     /**
