@@ -37,14 +37,18 @@ class JsontableType extends AbstractType
         $resolver->setOptional(array(
             'keys',
             'labeles',
-            'fixed_row'
+            'fixed_row',
+            'min',
+            'max'
         ));
 
         $resolver->setDefaults(array(
             'required'  => false,
             'multiple'  => true,
             'expanded'  => true,
-            'fixed_row' => false
+            'fixed_row' => false,
+            'min' => 0,
+            'max' => 0
         ));
     }
 
@@ -62,6 +66,11 @@ class JsontableType extends AbstractType
         $view->vars['keys'] = $options['keys'];
         $view->vars['labeles'] = $options['labeles'];
         $view->vars['fixed_row'] = $options['fixed_row'];
+        $view->vars['min'] = $options['min'];
+        $view->vars['max'] = $options['max'];
+        if ($view->vars['max'] && $view->vars['min'] && $view->vars['max'] <= $view->vars['min']) {
+            $view->vars['fixed_row'] = true;
+        }
     }
 
     /**
